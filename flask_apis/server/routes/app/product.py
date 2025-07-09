@@ -25,7 +25,7 @@ def create():
         is_model_exist=db_read_session.query(Products).filter_by(model_no=model).first()
         if is_model_exist is not None:
             return make_response(jsonify({'status':'fail','msg':'product already exist'}),400)
-        new_product = Products(id=uuid_string(),name=req_body["name"],model_no=model,price=req_body["price"])
+        new_product = Products(name=req_body["name"],model_no=model,price=req_body["price"])
         db_write_session.add(new_product)
         db_write_session.commit()
         product=db_read_session.query(Products).filter_by(model_no=model).first()
