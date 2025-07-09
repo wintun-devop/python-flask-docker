@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from app.config import Config
+from server_config import Config
 
 write_engine = create_engine(Config.WRITE_DB_URI)
 read_engine = create_engine(Config.READ_DB_URI)
