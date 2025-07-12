@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+
 #to get to ensure from .env
 load_dotenv(override=True)
 
@@ -14,6 +15,9 @@ db_user=os.getenv("DB_USER")
 db_password=os.getenv("DB_PASSWORD")
 db_host_write=os.getenv("DB_HOST_WRITE")
 db_host_read=os.getenv("DB_HOST_READ")
+
+#API Base Path
+api_base_path=os.getenv("API_BASE_PATH")
 
 class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
